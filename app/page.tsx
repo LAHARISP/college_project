@@ -29,13 +29,11 @@ export default function Page() {
       setError('Please select a role')
       return
     }
-  
-   
 
     const credentials = MOCK_CREDENTIALS[selectedRole]
     if (username === credentials.username && password === credentials.password) {
       // Navigate to dashboard based on role
-      router.push(`/${selectedRole.toLowerCase()}/dashboard`)
+      router.push(`/${selectedRole.toLowerCase()}`)
     } else {
       setError('Invalid credentials')
     }
@@ -116,12 +114,16 @@ export default function Page() {
                 {error}
               </div>
             )}
-            <button
-              type="submit" 
-              className="w-full bg-[#37474F] text-white hover:bg-[#455A64] py-2 rounded"
-            >
-              LOGIN
-            </button>
+            
+            {/* Use the Link component here for the button link */}
+            {/*<Link href="/student-mentor-allocation"></Link>*/}
+              <button
+                type="submit" 
+                className="w-full bg-[#37474F] text-white hover:bg-[#455A64] py-2 rounded"
+              >
+                LOGIN
+              </button>
+            
           </form>
         </div>
       </div>
